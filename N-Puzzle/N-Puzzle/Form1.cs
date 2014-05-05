@@ -48,12 +48,12 @@ namespace N_Puzzle
                     k = 0;
                     j++;
                 }
-                StringBuilder s = new StringBuilder(@"C:\Users\Vladimir\Documents\GitHub\Test\TestProject\TestProject\Images\#.png");
+                StringBuilder s = new StringBuilder(@"~\Images\#.png");
                 int n = r.Next(list.Count);
                 int m = list[n];
                 mat[j, k] = m;
                 list.RemoveAt(n);
-                s[71] = (char)(m + 48);
+                s[9] = (char)(m + 48);
                 Image sl = Image.FromFile(s.ToString());
                 Pole p = new Pole(m, X, Y, 83, 76, sl);
                 pole.Add(p);
