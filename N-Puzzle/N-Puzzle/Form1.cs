@@ -12,9 +12,163 @@ namespace N_Puzzle
 {
     public partial class Form1 : Form
     {
+        List<Pole> pole = new List<Pole>();
+        Random r = new Random();
+        int[,] mat = new int[3, 3];
+        public int X { get; set; }
+        public int Y { get; set; }
         public Form1()
         {
             InitializeComponent();
+            game();
+        }
+
+        private void game()
+        {
+            X = 0;
+            Y = 0;
+            List<int> list = new List<int>();
+            int br = 0, j = 0, k = 0;
+            for (int i = 0; i < 9; i++)
+                list.Add(i);
+
+            for (int i = 0; i < 9; i++, br++, k++)
+            {
+                if (br == 3)
+                {
+                    X = 0;
+                    Y = 76;
+                    k = 0;
+                    j++;
+                }
+                if (br == 6)
+                {
+                    X = 0;
+                    Y = 152;
+                    k = 0;
+                    j++;
+                }
+                StringBuilder s = new StringBuilder(@"C:\Users\Vladimir\Documents\GitHub\Test\TestProject\TestProject\Images\#.png");
+                int n = r.Next(list.Count);
+                int m = list[n];
+                mat[j, k] = m;
+                list.RemoveAt(n);
+                s[71] = (char)(m + 48);
+                Image sl = Image.FromFile(s.ToString());
+                Pole p = new Pole(m, X, Y, 83, 76, sl);
+                pole.Add(p);
+                X += 83;
+            }
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(Color.Gray);
+            crtaj(e.Graphics);
+        }
+
+        private void crtaj(Graphics gr)
+        {
+            foreach (Pole p in pole)
+            {
+                gr.DrawImage(p.Slika, p.X, p.Y, p.Width, p.Height);
+            }
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            int x = e.X, y = e.Y, n = 0, i = 0, j = 0, a = 0, b = 0;
+            X = 83;
+            Y = 76;
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+                    if (X - x <= 83 && X - x >= 0 && Y - y <= 76 && Y - Y >= 0)
+                    {
+                        a = i; b = j;
+                        n = mat[i, j];
+                        break;
+                    }
+                    X += 83;
+                }
+                X = 83;
+                Y += 76;
+            }
+            if (sosedi(a, b) == 1)
+            {
+                for (i = 0; i < 3; i++)
+                {
+                    for (j = 0; j < 3; j++)
+                    {
+                        if (mat[i, j] == 0)
+                        {
+                            int tmp = mat[i, j];
+                            mat[i, j] = mat[a, b];
+                            mat[a, b] = tmp;
+                        }
+                    }
+                }
+                int p1 = find(n);
+                int p2 = find(0);
+                swap(pole[p1], pole[p2]);
+            }
+            Invalidate();
+            if (proveri())
+                MessageBox.Show("Честитки");
+        }
+
+        private int sosedi(int i, int j)
+        {
+            if (i - 1 >= 0)
+                if (mat[i - 1, j] == 0)
+                    return 1;
+            if (i + 1 < 3)
+                if (mat[i + 1, j] == 0)
+                    return 1;
+            if (j - 1 >= 0)
+                if (mat[i, j - 1] == 0)
+                    return 1;
+            if (j + 1 < 3)
+                if (mat[i, j + 1] == 0)
+                    return 1;
+            return -1;
+        }
+
+        private int find(int n)
+        {
+            for (int i = 0; i < pole.Count; i++)
+            {
+                if (pole[i].Broj == n)
+                    return i;
+            }
+            return -1;
+        }
+
+        private void swap(Pole p1, Pole p2)
+        {
+            int tmp = p1.X;
+            p1.X = p2.X;
+            p2.X = tmp;
+            tmp = p1.Y;
+            p1.Y = p2.Y;
+            p2.Y = tmp;
+        }
+
+        private bool proveri()
+        {
+            int br = 1;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++, br++)
+                {
+                    if (br == 9)
+                        break;
+                    if (mat[i, j] != br)
+                        return false;
+                }
+            }
+            return true;
         }
     }
 }
