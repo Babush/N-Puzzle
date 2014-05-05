@@ -14,7 +14,7 @@ namespace N_Puzzle
     {
         List<Pole> pole = new List<Pole>();
         Random r = new Random();
-        int[,] mat = new int[3, 3];
+        int[,] mat ;
         public int X { get; set; }
         public int Y { get; set; }
         public int N { get; set; }
@@ -32,31 +32,68 @@ namespace N_Puzzle
             Y = 24;
             List<int> list = new List<int>();
             int br = 0, j = 0, k = 0;
+            clear();
             for (int i = 0; i < N; i++)
                 list.Add(i);
 
             for (int i = 0; i < N; i++, br++, k++)
             {
-                if (br == 3)
+                if (M == 4)
                 {
-                    X = 0;
-                    Y = 100;
-                    k = 0;
-                    j++;
+                    if (br == 4)
+                    {
+                        X = 0;
+                        Y = 100;
+                        k = 0;
+                        j++;
+                    }
+                    if (br == 8)
+                    {
+                        X = 0;
+                        Y = 176;
+                        k = 0;
+                        j++;
+                    }
+                    if (br == 12)
+                    {
+                        X = 0;
+                        Y = 252;
+                        k = 0;
+                        j++;
+                    }
                 }
-                if (br == 6)
+                else
                 {
-                    X = 0;
-                    Y = 176;
-                    k = 0;
-                    j++;
+                    if (br == 3)
+                    {
+                        X = 0;
+                        Y = 100;
+                        k = 0;
+                        j++;
+                    }
+                    if (br == 6)
+                    {
+                        X = 0;
+                        Y = 176;
+                        k = 0;
+                        j++;
+                    }
+
                 }
                 StringBuilder s = new StringBuilder(@"C:\Users\Vladimir\Documents\GitHub\N-Puzzle\N-Puzzle\N-Puzzle\Images\#.png");
+                StringBuilder s1 = new StringBuilder(@"C:\Users\Vladimir\Documents\GitHub\N-Puzzle\N-Puzzle\N-Puzzle\Images\##.png");
                 int n = r.Next(list.Count);
                 int m = list[n];
                 mat[j, k] = m;
                 list.RemoveAt(n);
-                s[69] = (char)(m + 48);
+                if (m > 9)
+                {
+                    s1[69] = (char)(49);
+                    s1[70] = (char)(m % 10 + 48);
+                    s = s1;
+                }
+                else
+                    s[69] = (char)(m + 48);
                 Image sl = Image.FromFile(s.ToString());
                 Pole p = new Pole(m, X, Y, 83, 76, sl);
                 pole.Add(p);
@@ -127,13 +164,13 @@ namespace N_Puzzle
             if (i - 1 >= 0)
                 if (mat[i - 1, j] == 0)
                     return 1;
-            if (i + 1 < 3)
+            if (i + 1 < M)
                 if (mat[i + 1, j] == 0)
                     return 1;
             if (j - 1 >= 0)
                 if (mat[i, j - 1] == 0)
                     return 1;
-            if (j + 1 < 3)
+            if (j + 1 < M)
                 if (mat[i, j + 1] == 0)
                     return 1;
             return -1;
@@ -175,6 +212,12 @@ namespace N_Puzzle
             return true;
         }
 
+        private void clear()
+        {
+            pole = new List<Pole>();
+            mat = new int[M, M];
+        }
+
         private void x3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Size = new Size(265, 291);
@@ -197,6 +240,7 @@ namespace N_Puzzle
             game();
             Invalidate();
             //MessageBox.Show("" + M + " " + N);
+             
         }
 
         private void излезToolStripMenuItem_Click(object sender, EventArgs e)
