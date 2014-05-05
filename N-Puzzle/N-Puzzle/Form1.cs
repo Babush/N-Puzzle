@@ -22,6 +22,7 @@ namespace N_Puzzle
         public Form1()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
             //game();
         }
 
@@ -31,10 +32,10 @@ namespace N_Puzzle
             Y = 24;
             List<int> list = new List<int>();
             int br = 0, j = 0, k = 0;
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < N; i++)
                 list.Add(i);
 
-            for (int i = 0; i < 9; i++, br++, k++)
+            for (int i = 0; i < N; i++, br++, k++)
             {
                 if (br == 3)
                 {
@@ -82,11 +83,12 @@ namespace N_Puzzle
             int x = e.X, y = e.Y, n = 0, i = 0, j = 0, a = 0, b = 0;
             X = 83;
             Y = 100;
-            for (i = 0; i < 3; i++)
+            //MessageBox.Show("" + x +" "+ y);
+            for (i = 0; i < M; i++)
             {
-                for (j = 0; j < 3; j++)
+                for (j = 0; j < M; j++)
                 {
-                    if (X - x <= 83 && X - x >= 0 && Y - y <= 100 && Y - Y >= 0)
+                    if (X - x <= 83 && X - x >= 0 && Y - y <= 76 && Y - Y >= 0)
                     {
                         a = i; b = j;
                         n = mat[i, j];
@@ -95,13 +97,13 @@ namespace N_Puzzle
                     X += 83;
                 }
                 X = 83;
-                Y += 100;
+                Y += 76;
             }
             if (sosedi(a, b) == 1)
             {
-                for (i = 0; i < 3; i++)
+                for (i = 0; i < M; i++)
                 {
-                    for (j = 0; j < 3; j++)
+                    for (j = 0; j < M; j++)
                     {
                         if (mat[i, j] == 0)
                         {
@@ -160,11 +162,11 @@ namespace N_Puzzle
         private bool proveri()
         {
             int br = 1;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < M; i++)
             {
-                for (int j = 0; j < 3; j++, br++)
+                for (int j = 0; j < M; j++, br++)
                 {
-                    if (br == 9)
+                    if (br == N)
                         break;
                     if (mat[i, j] != br)
                         return false;
@@ -182,7 +184,7 @@ namespace N_Puzzle
             M = 3;
             game();
             Invalidate();
-            MessageBox.Show("" + M + " " + N);
+            //MessageBox.Show("" + M + " " + N);
         }
 
         private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,7 +196,7 @@ namespace N_Puzzle
             M = 4;
             game();
             Invalidate();
-            MessageBox.Show("" + M + " " + N);
+            //MessageBox.Show("" + M + " " + N);
         }
 
         private void излезToolStripMenuItem_Click(object sender, EventArgs e)
