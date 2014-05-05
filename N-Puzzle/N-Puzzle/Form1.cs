@@ -17,16 +17,18 @@ namespace N_Puzzle
         int[,] mat = new int[3, 3];
         public int X { get; set; }
         public int Y { get; set; }
+        public int N { get; set; }
+        public int M { get; set; }
         public Form1()
         {
             InitializeComponent();
-            game();
+            //game();
         }
 
         private void game()
         {
             X = 0;
-            Y = 0;
+            Y = 24;
             List<int> list = new List<int>();
             int br = 0, j = 0, k = 0;
             for (int i = 0; i < 9; i++)
@@ -37,23 +39,23 @@ namespace N_Puzzle
                 if (br == 3)
                 {
                     X = 0;
-                    Y = 76;
+                    Y = 100;
                     k = 0;
                     j++;
                 }
                 if (br == 6)
                 {
                     X = 0;
-                    Y = 152;
+                    Y = 176;
                     k = 0;
                     j++;
                 }
-                StringBuilder s = new StringBuilder(@"~\Images\#.png");
+                StringBuilder s = new StringBuilder(@"C:\Users\Vladimir\Documents\GitHub\N-Puzzle\N-Puzzle\N-Puzzle\Images\#.png");
                 int n = r.Next(list.Count);
                 int m = list[n];
                 mat[j, k] = m;
                 list.RemoveAt(n);
-                s[9] = (char)(m + 48);
+                s[69] = (char)(m + 48);
                 Image sl = Image.FromFile(s.ToString());
                 Pole p = new Pole(m, X, Y, 83, 76, sl);
                 pole.Add(p);
@@ -79,12 +81,12 @@ namespace N_Puzzle
         {
             int x = e.X, y = e.Y, n = 0, i = 0, j = 0, a = 0, b = 0;
             X = 83;
-            Y = 76;
+            Y = 100;
             for (i = 0; i < 3; i++)
             {
                 for (j = 0; j < 3; j++)
                 {
-                    if (X - x <= 83 && X - x >= 0 && Y - y <= 76 && Y - Y >= 0)
+                    if (X - x <= 83 && X - x >= 0 && Y - y <= 100 && Y - Y >= 0)
                     {
                         a = i; b = j;
                         n = mat[i, j];
@@ -93,7 +95,7 @@ namespace N_Puzzle
                     X += 83;
                 }
                 X = 83;
-                Y += 76;
+                Y += 100;
             }
             if (sosedi(a, b) == 1)
             {
@@ -169,6 +171,37 @@ namespace N_Puzzle
                 }
             }
             return true;
+        }
+
+        private void x3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(265, 291);
+            x3ToolStripMenuItem.Checked = true;
+            x4ToolStripMenuItem.Checked = false;
+            N = 9;
+            M = 3;
+            game();
+            Invalidate();
+            MessageBox.Show("" + M + " " + N);
+        }
+
+        private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(348, 367);
+            x4ToolStripMenuItem.Checked = true;
+            x3ToolStripMenuItem.Checked = false;
+            N = 16;
+            M = 4;
+            game();
+            Invalidate();
+            MessageBox.Show("" + M + " " + N);
+        }
+
+        private void излезToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Дали сте сигурни?","Излез",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
+            if(DialogResult == System.Windows.Forms.DialogResult.Yes)
+                this.Close();
         }
     }
 }
