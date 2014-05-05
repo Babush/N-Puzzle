@@ -80,20 +80,20 @@ namespace N_Puzzle
                     }
 
                 }
-                StringBuilder s = new StringBuilder(@"C:\Users\Vladimir\Documents\GitHub\N-Puzzle\N-Puzzle\N-Puzzle\Images\#.png");
-                StringBuilder s1 = new StringBuilder(@"C:\Users\Vladimir\Documents\GitHub\N-Puzzle\N-Puzzle\N-Puzzle\Images\##.png");
+                StringBuilder s = new StringBuilder(@"Images\#.png");
+                StringBuilder s1 = new StringBuilder(@"Images\##.png");
                 int n = r.Next(list.Count);
                 int m = list[n];
                 mat[j, k] = m;
                 list.RemoveAt(n);
                 if (m > 9)
                 {
-                    s1[69] = (char)(49);
-                    s1[70] = (char)(m % 10 + 48);
+                    s1[7] = (char)(49);
+                    s1[8] = (char)(m % 10 + 48);
                     s = s1;
                 }
                 else
-                    s[69] = (char)(m + 48);
+                    s[7] = (char)(m + 48);
                 Image sl = Image.FromFile(s.ToString());
                 Pole p = new Pole(m, X, Y, 83, 76, sl);
                 pole.Add(p);
