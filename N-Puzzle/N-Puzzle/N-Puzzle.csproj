@@ -89,6 +89,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Images\Menu\Numbers 3x3.png" />
+    <Content Include="Images\Menu\Numbers 4x4.png" />
+    <Content Include="Images\Menu\Smiley 3x3.png" />
+    <Content Include="Images\Menu\Smiley 4x4.png" />
     <Content Include="Images\Smileyy\0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
