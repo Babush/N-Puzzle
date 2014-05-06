@@ -14,6 +14,7 @@ namespace N_Puzzle
     {
         public string str1 = "Images\\Numbers\\#.png";
         public string str2 = "Images\\Numbers\\1#.png";
+        Form1 f = new Form1();
         public Form2()
         {
             InitializeComponent();
@@ -23,12 +24,14 @@ namespace N_Puzzle
         {
             str1 = "Images\\Numbers\\#.png";
             str2 = "Images\\Numbers\\1#.png";
+            this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             str1 = "Images\\Smileyy\\#.png";
             str2 = "Images\\Smileyy\\1#.png";
+            this.Close();
         }
 
     }
