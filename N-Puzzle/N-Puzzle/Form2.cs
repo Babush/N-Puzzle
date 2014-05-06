@@ -41,6 +41,12 @@ namespace N_Puzzle
             this.Close();
         }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            str1 = "Images\\Fnklogo\\3x3\\#.png";
+            str2 = "Images\\Fnklogo\\4x4\\1#.png";
+            this.Close();
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             if (tri)
@@ -48,6 +54,5 @@ namespace N_Puzzle
             else
                 pictureBox1.Image = Image.FromFile(@"Images\Menu\Numbers 4x4.png");
         }
-
     }
 }

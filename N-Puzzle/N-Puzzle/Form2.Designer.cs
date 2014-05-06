@@ -75,11 +75,13 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(178, 184);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(150, 150);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label1
             // 
@@ -113,9 +115,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(237, 340);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
+            this.label4.Text = "ФИНКИ";
             // 
             // Form2
             // 
