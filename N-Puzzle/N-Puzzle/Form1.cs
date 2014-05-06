@@ -94,7 +94,7 @@ namespace N_Puzzle
 
                 }
                 StringBuilder s = new StringBuilder(@f.str1);
-                StringBuilder s1 = new StringBuilder(@f.str2);
+                //StringBuilder s1 = new StringBuilder(@f.str2);
                 //MessageBox.Show(f.str1 + "  " + f.str2);
                 int n = r.Next(list.Count);
                 int m = list[n];
@@ -102,11 +102,11 @@ namespace N_Puzzle
                 list.RemoveAt(n);
                 if (m > 9)
                 {
-                    s1[16] = (char)(m % 10 + 48);
-                    s = s1;
+                    //s1[20] = (char)(m % 10 + 48);
+                    //s = s1;
                 }
                 else
-                    s[15] = (char)(m + 48);
+                    s[19] = (char)(m + 48);
                 Image sl = Image.FromFile(s.ToString());
                 Pole p = new Pole(m, X, Y, 83, 76, sl);
                 pole.Add(p);

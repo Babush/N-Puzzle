@@ -12,8 +12,8 @@ namespace N_Puzzle
 {
     public partial class Form2 : Form
     {
-        public string str1 = "Images\\Numbers\\#.png";
-        public string str2 = "Images\\Numbers\\1#.png";
+        public string str1 = "Images\\Numbers\\3x3\\#.png";
+        //public string str2 = "Images\\Numbers\\1#.png";
         //Form1 f = new Form1();
         public Form2()
         {
@@ -22,8 +22,8 @@ namespace N_Puzzle
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            str1 = "Images\\Numbers\\#.png";
-            str2 = "Images\\Numbers\\1#.png";
+            str1 = "Images\\Numbers\\3x3\\#.png";
+            //str2 = "Images\\Numbers\\1#.png";
             this.Close();
         }
 

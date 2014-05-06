@@ -74,6 +74,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Images\Numbers\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,7 +103,32 @@
     <Content Include="Images\Numbers\15.png" />
     <Content Include="Images\Numbers\2.png" />
     <Content Include="Images\Numbers\3.png" />
+    <Content Include="Images\Numbers\3x3\0.png" />
+    <Content Include="Images\Numbers\3x3\1.png" />
+    <Content Include="Images\Numbers\3x3\2.png" />
+    <Content Include="Images\Numbers\3x3\3.png" />
+    <Content Include="Images\Numbers\3x3\4.png" />
+    <Content Include="Images\Numbers\3x3\5.png" />
+    <Content Include="Images\Numbers\3x3\6.png" />
+    <Content Include="Images\Numbers\3x3\7.png" />
+    <Content Include="Images\Numbers\3x3\8.png" />
     <Content Include="Images\Numbers\4.png" />
+    <Content Include="Images\Numbers\4x4\0.png" />
+    <Content Include="Images\Numbers\4x4\1.png" />
+    <Content Include="Images\Numbers\4x4\10.png" />
+    <Content Include="Images\Numbers\4x4\11.png" />
+    <Content Include="Images\Numbers\4x4\12.png" />
+    <Content Include="Images\Numbers\4x4\13.png" />
+    <Content Include="Images\Numbers\4x4\14.png" />
+    <Content Include="Images\Numbers\4x4\15.png" />
+    <Content Include="Images\Numbers\4x4\2.png" />
+    <Content Include="Images\Numbers\4x4\3.png" />
+    <Content Include="Images\Numbers\4x4\4.png" />
+    <Content Include="Images\Numbers\4x4\5.png" />
+    <Content Include="Images\Numbers\4x4\6.png" />
+    <Content Include="Images\Numbers\4x4\7.png" />
+    <Content Include="Images\Numbers\4x4\8.png" />
+    <Content Include="Images\Numbers\4x4\9.png" />
     <Content Include="Images\Numbers\5.png" />
     <Content Include="Images\Numbers\6.png" />
     <Content Include="Images\Numbers\7.png" />
