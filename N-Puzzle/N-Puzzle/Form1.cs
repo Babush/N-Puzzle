@@ -36,6 +36,7 @@ namespace N_Puzzle
             label1.Visible = false;
             label1.Text = "Изминато времe: 00:00:00";
             label2.Visible = false;
+            паузаToolStripMenuItem.Checked = false;
         }
 
         // Креирање на објекти(полиња)
@@ -136,7 +137,7 @@ namespace N_Puzzle
         }
 
         // Наоѓаме кое поле е кликнато и правиме замена ако има валиден потег
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        private void MouseKlik(object sender, MouseEventArgs e)
         {
             int x = e.X, y = e.Y, n = 0, i = 0, j = 0, a = 0, b = 0;
             X = 83;
@@ -251,6 +252,7 @@ namespace N_Puzzle
 
         private void x3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.MouseDown += MouseKlik;
             f2.tri = true;
             f2.ShowDialog();
             count = 0;
@@ -273,6 +275,7 @@ namespace N_Puzzle
 
         private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.MouseDown += MouseKlik;
             f2.tri = false;
             f2.ShowDialog();
             count = 0;
@@ -304,6 +307,11 @@ namespace N_Puzzle
         {
             count++;
             label1.Text = "Изминато времe: "+TimeSpan.FromSeconds(count).ToString();
+        }
+
+        private void паузаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

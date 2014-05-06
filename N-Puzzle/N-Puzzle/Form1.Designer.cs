@@ -72,14 +72,14 @@
             // x3ToolStripMenuItem
             // 
             this.x3ToolStripMenuItem.Name = "x3ToolStripMenuItem";
-            this.x3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.x3ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.x3ToolStripMenuItem.Text = "3 x 3";
             this.x3ToolStripMenuItem.Click += new System.EventHandler(this.x3ToolStripMenuItem_Click);
             // 
             // x4ToolStripMenuItem
             // 
             this.x4ToolStripMenuItem.Name = "x4ToolStripMenuItem";
-            this.x4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.x4ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.x4ToolStripMenuItem.Text = "4 x 4";
             this.x4ToolStripMenuItem.Click += new System.EventHandler(this.x4ToolStripMenuItem_Click);
             // 
@@ -88,6 +88,7 @@
             this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
             this.паузаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.паузаToolStripMenuItem.Text = "Пауза";
+            this.паузаToolStripMenuItem.Click += new System.EventHandler(this.паузаToolStripMenuItem_Click);
             // 
             // излезToolStripMenuItem
             // 
@@ -126,9 +127,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "N - Puzzle";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
