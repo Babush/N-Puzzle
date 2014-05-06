@@ -29,8 +29,8 @@ namespace N_Puzzle
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            str1 = "Images\\Smileyy\\#.png";
-            str2 = "Images\\Smileyy\\1#.png";
+            str1 = "Images\\Smileyy\\3x3\\#.png";
+            //str2 = "Images\\Smileyy\\1#.png";
             this.Close();
         }
 
