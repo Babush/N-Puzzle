@@ -14,6 +14,7 @@ namespace N_Puzzle
     {
         public string str1 = "Images\\Numbers\\3x3\\#.png";
         public string str2 = "Images\\Numbers\\4x4\\1#.png";
+        public bool tri = true;
         public Form2()
         {
             InitializeComponent();
@@ -38,6 +39,14 @@ namespace N_Puzzle
             str1 = "Images\\Monkeyy\\3x3\\#.png";
             str2 = "Images\\Monkeyy\\4x4\\1#.png";
             this.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            if (tri)
+                pictureBox1.Image = Image.FromFile(@"Images\Menu\Numbers 3x3.png");
+            else
+                pictureBox1.Image = Image.FromFile(@"Images\Menu\Numbers 4x4.png");
         }
 
     }

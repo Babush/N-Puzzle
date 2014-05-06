@@ -16,7 +16,6 @@ namespace N_Puzzle
         Random r = new Random();
 
         Form2 f2 = new Form2();
-        Form3 f3 = new Form3();
 
         int[,] mat;
         int count = 0;
@@ -252,6 +251,7 @@ namespace N_Puzzle
 
         private void x3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            f2.tri = true;
             f2.ShowDialog();
             count = 0;
             potezi = 0;
@@ -273,6 +273,7 @@ namespace N_Puzzle
 
         private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            f2.tri = false;
             f2.ShowDialog();
             count = 0;
             potezi = 0;
