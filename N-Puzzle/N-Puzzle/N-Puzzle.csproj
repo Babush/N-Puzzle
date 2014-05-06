@@ -175,6 +175,7 @@
     <Content Include="Images\Numbers\4x4\9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Smileyy\3x3\0.png" />
     <Content Include="Images\Smileyy\3x3\1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -197,9 +198,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Smileyy\3x3\8.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Smileyy\3x3\9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Smileyy\4x4\0.png">
