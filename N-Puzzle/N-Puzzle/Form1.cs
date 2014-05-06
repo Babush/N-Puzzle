@@ -95,7 +95,7 @@ namespace N_Puzzle
                 }
                 StringBuilder s = new StringBuilder(@f.str1);
                 StringBuilder s1 = new StringBuilder(@f.str2);
-                MessageBox.Show(f.str1 + "  " + f.str2);
+               // MessageBox.Show(f.str1 + "  " + f.str2);
                 int n = r.Next(list.Count);
                 int m = list[n];
                 mat[j, k] = m;
