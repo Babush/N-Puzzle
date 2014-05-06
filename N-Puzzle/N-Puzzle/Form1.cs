@@ -14,16 +14,29 @@ namespace N_Puzzle
     {
         List<Pole> pole = new List<Pole>();
         Random r = new Random();
-        int[,] mat ;
+        int[,] mat;
+        int count = 0;
+        int potezi = 0;
+
         public int X { get; set; }
         public int Y { get; set; }
         public int N { get; set; }
         public int M { get; set; }
+
+        Timer t = new Timer();
         public Form1()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            //game();
+            t.Interval = 1000;
+            t.Enabled = true;
+            t.Tick += new EventHandler(onTick);
+        }
+
+        private void onTick(object sender, EventArgs e)
+        {
+            count++;
+            //label1.Text = TimeSpan.FromSeconds(count).ToString();
         }
 
         private void game()
@@ -155,8 +168,9 @@ namespace N_Puzzle
                 swap(pole[p1], pole[p2]);
             }
             Invalidate();
+            potezi++;
             if (proveri())
-                MessageBox.Show("Честитки");
+                MessageBox.Show("Честитки освоивте: "+(100000/count)*(100/potezi)+" поени");
         }
 
         private int sosedi(int i, int j)
@@ -225,7 +239,10 @@ namespace N_Puzzle
             x4ToolStripMenuItem.Checked = false;
             N = 9;
             M = 3;
+            count = 0;
+            potezi = 0;
             game();
+            t.Start();
             Invalidate();
             //MessageBox.Show("" + M + " " + N);
         }
