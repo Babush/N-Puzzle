@@ -94,8 +94,8 @@ namespace N_Puzzle
                     }
 
                 }
-                StringBuilder s = new StringBuilder(@f2.str);
-                StringBuilder s1 = new StringBuilder(@f3.str);
+                StringBuilder s = new StringBuilder(@f2.str1);
+                StringBuilder s1 = new StringBuilder(@f2.str2);
                 //MessageBox.Show(f.str1 + "  " + f.str2);
                 int n = r.Next(list.Count);
                 int m = list[n];
@@ -103,13 +103,16 @@ namespace N_Puzzle
                 list.RemoveAt(n);
                 if (m > 9)
                 {
-                    s1[15] = '4';
-                    s1[17] = '4';
                     s1[20] = (char)(m % 10 + 48);
                     s = s1;
                 }
                 else
                     s[19] = (char)(m + 48);
+                if (M == 4)
+                {
+                    s[15] = '4';
+                    s[17] = '4';
+                }
                 Image sl = Image.FromFile(s.ToString());
                 Pole p = new Pole(m, X, Y, 83, 76, sl);
                 pole.Add(p);
@@ -119,7 +122,7 @@ namespace N_Puzzle
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.Black);
+            e.Graphics.Clear(Color.Gray);
             crtaj(e.Graphics);
         }
 
@@ -270,6 +273,7 @@ namespace N_Puzzle
 
         private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            f2.ShowDialog();
             count = 0;
             potezi = 0;
             label2.Text = "Потези: " + potezi;
