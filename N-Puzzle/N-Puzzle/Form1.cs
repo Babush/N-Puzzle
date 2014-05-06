@@ -263,7 +263,15 @@ namespace N_Puzzle
 
         private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(348, 367);
+            count = 0;
+            potezi = 0;
+            label2.Text = "Потези: " + potezi;
+            t.Start();
+            this.Size = new Size(348, 380);
+            label1.Location = new Point(0, 328);
+            label1.Visible = true;
+            label2.Location = new Point(166, 328);
+            label2.Visible = true;
             x4ToolStripMenuItem.Checked = true;
             x3ToolStripMenuItem.Checked = false;
             N = 16;
