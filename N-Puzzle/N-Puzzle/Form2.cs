@@ -14,7 +14,7 @@ namespace N_Puzzle
     {
         public string str1 = "Images\\Numbers\\#.png";
         public string str2 = "Images\\Numbers\\1#.png";
-        Form1 f = new Form1();
+        //Form1 f = new Form1();
         public Form2()
         {
             InitializeComponent();
