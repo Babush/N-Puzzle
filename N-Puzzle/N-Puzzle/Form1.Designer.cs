@@ -66,33 +66,33 @@
             this.x3ToolStripMenuItem,
             this.x4ToolStripMenuItem});
             this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
-            this.новаИграToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.новаИграToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.новаИграToolStripMenuItem.Text = "Нова игра";
             // 
             // x3ToolStripMenuItem
             // 
             this.x3ToolStripMenuItem.Name = "x3ToolStripMenuItem";
-            this.x3ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.x3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.x3ToolStripMenuItem.Text = "3 x 3";
             this.x3ToolStripMenuItem.Click += new System.EventHandler(this.x3ToolStripMenuItem_Click);
             // 
             // x4ToolStripMenuItem
             // 
             this.x4ToolStripMenuItem.Name = "x4ToolStripMenuItem";
-            this.x4ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.x4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.x4ToolStripMenuItem.Text = "4 x 4";
             this.x4ToolStripMenuItem.Click += new System.EventHandler(this.x4ToolStripMenuItem_Click);
             // 
             // паузаToolStripMenuItem
             // 
             this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
-            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.паузаToolStripMenuItem.Text = "Пауза";
             // 
             // излезToolStripMenuItem
             // 
             this.излезToolStripMenuItem.Name = "излезToolStripMenuItem";
-            this.излезToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.излезToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.излезToolStripMenuItem.Text = "Излез";
             this.излезToolStripMenuItem.Click += new System.EventHandler(this.излезToolStripMenuItem_Click);
             // 

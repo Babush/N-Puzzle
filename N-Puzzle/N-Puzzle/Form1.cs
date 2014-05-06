@@ -14,6 +14,9 @@ namespace N_Puzzle
     {
         List<Pole> pole = new List<Pole>();
         Random r = new Random();
+
+        Form2 f = new Form2();
+
         int[,] mat;
         int count = 0;
         int potezi = 0;
@@ -90,20 +93,20 @@ namespace N_Puzzle
                     }
 
                 }
-                StringBuilder s = new StringBuilder(@"Images\#.png");
-                StringBuilder s1 = new StringBuilder(@"Images\##.png");
+                StringBuilder s = new StringBuilder(@f.str1);
+                StringBuilder s1 = new StringBuilder(@f.str2);
+                MessageBox.Show(f.str1 + "  " + f.str2);
                 int n = r.Next(list.Count);
                 int m = list[n];
                 mat[j, k] = m;
                 list.RemoveAt(n);
                 if (m > 9)
                 {
-                    s1[7] = (char)(49);
-                    s1[8] = (char)(m % 10 + 48);
+                    s1[16] = (char)(m % 10 + 48);
                     s = s1;
                 }
                 else
-                    s[7] = (char)(m + 48);
+                    s[15] = (char)(m + 48);
                 Image sl = Image.FromFile(s.ToString());
                 Pole p = new Pole(m, X, Y, 83, 76, sl);
                 pole.Add(p);
@@ -243,6 +246,8 @@ namespace N_Puzzle
 
         private void x3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form2 f = new Form2();
+            f.ShowDialog();
             count = 0;
             potezi = 0;
             label2.Text = "Потези: " + potezi;
