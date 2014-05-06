@@ -10,31 +10,27 @@ using System.Windows.Forms;
 
 namespace N_Puzzle
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
-        public string str = "Images\\Numbers\\3x3\\#.png";
-        public Form2()
+        public string str = "Images\\Numbers\\4x4\\1#.png";
+        public Form3()
         {
             InitializeComponent();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            str = "Images\\Numbers\\3x3\\#.png";
-            this.Close();
+            str = "Images\\Numbers\\4x4\\1#.png";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            str = "Images\\Smileyy\\3x3\\#.png";
-            this.Close();
+            str = "Images\\Smileyy\\4x4\\1#.png";
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            str = "Images\\Monkeyy\\3x3\\#.png";
-            this.Close();
+            str = "Images\\Monkeyy\\4x4\\1#.png";
         }
-
     }
 }
