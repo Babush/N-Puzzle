@@ -29,14 +29,10 @@ namespace N_Puzzle
             InitializeComponent();
             this.DoubleBuffered = true;
             t.Interval = 1000;
-            t.Enabled = true;
             t.Tick += new EventHandler(onTick);
-        }
-
-        private void onTick(object sender, EventArgs e)
-        {
-            count++;
-            //label1.Text = TimeSpan.FromSeconds(count).ToString();
+            label1.Visible = false;
+            label1.Text = "Изминато времe: 00:00:00";
+            label2.Visible = false;
         }
 
         // Креирање на објекти(полиња)
@@ -170,11 +166,15 @@ namespace N_Puzzle
                 int p1 = find(n);
                 int p2 = find(0);
                 swap(pole[p1], pole[p2]);
+                potezi++;
             }
             Invalidate();
-            potezi++;
+            label2.Text = "Потези: " + potezi;
             if (proveri())
-                MessageBox.Show("Честитки освоивте: "+(100000/count)*(100/potezi)+" поени");
+            {
+                t.Stop();
+                MessageBox.Show("Честитки освоивте: " + (100000 / count) * (100 / potezi) + " поени");
+            }
         }
 
         // Проверка дали кликнатото поле е сосед со празното поле, 1 -> Да, -1 -> Не
@@ -243,7 +243,15 @@ namespace N_Puzzle
 
         private void x3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(265, 291);
+            count = 0;
+            potezi = 0;
+            label2.Text = "Потези: " + potezi;
+            t.Start();
+            this.Size = new Size(265, 304);
+            label1.Location = new Point(0,252);
+            label1.Visible = true;
+            label2.Location = new Point(166,252);
+            label2.Visible = true;
             x3ToolStripMenuItem.Checked = true;
             x4ToolStripMenuItem.Checked = false;
             N = 9;
@@ -270,6 +278,12 @@ namespace N_Puzzle
             DialogResult = MessageBox.Show("Дали сте сигурни?","Излез",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
             if(DialogResult == System.Windows.Forms.DialogResult.Yes)
                 this.Close();
+        }
+
+        private void onTick(object sender, EventArgs e)
+        {
+            count++;
+            label1.Text = "Изминато времe: "+TimeSpan.FromSeconds(count).ToString();
         }
     }
 }
