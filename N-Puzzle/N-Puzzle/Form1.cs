@@ -39,6 +39,7 @@ namespace N_Puzzle
             //label1.Text = TimeSpan.FromSeconds(count).ToString();
         }
 
+        // Креирање на објекти(полиња)
         private void game()
         {
             X = 0;
@@ -120,6 +121,8 @@ namespace N_Puzzle
             crtaj(e.Graphics);
         }
 
+
+        // Ги исцртува полињата на формата
         private void crtaj(Graphics gr)
         {
             foreach (Pole p in pole)
@@ -128,6 +131,7 @@ namespace N_Puzzle
             }
         }
 
+        // Наоѓаме кое поле е кликнато и правиме замена ако има валиден потег
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             int x = e.X, y = e.Y, n = 0, i = 0, j = 0, a = 0, b = 0;
@@ -173,6 +177,7 @@ namespace N_Puzzle
                 MessageBox.Show("Честитки освоивте: "+(100000/count)*(100/potezi)+" поени");
         }
 
+        // Проверка дали кликнатото поле е сосед со празното поле, 1 -> Да, -1 -> Не
         private int sosedi(int i, int j)
         {
             if (i - 1 >= 0)
@@ -190,6 +195,7 @@ namespace N_Puzzle
             return -1;
         }
 
+        // Пребарување елемент во листа, доколку е пронајден го враќа индексот, ако не -1
         private int find(int n)
         {
             for (int i = 0; i < pole.Count; i++)
@@ -200,6 +206,7 @@ namespace N_Puzzle
             return -1;
         }
 
+        // Смена на 2 полиња
         private void swap(Pole p1, Pole p2)
         {
             int tmp = p1.X;
@@ -210,6 +217,7 @@ namespace N_Puzzle
             p2.Y = tmp;
         }
 
+        // Проверка дали играта е завршена, true -> завршена
         private bool proveri()
         {
             int br = 1;
@@ -226,6 +234,7 @@ namespace N_Puzzle
             return true;
         }
 
+        // Ресетирање/креирање(празни) листа и матрица
         private void clear()
         {
             pole = new List<Pole>();
@@ -239,10 +248,7 @@ namespace N_Puzzle
             x4ToolStripMenuItem.Checked = false;
             N = 9;
             M = 3;
-            count = 0;
-            potezi = 0;
             game();
-            t.Start();
             Invalidate();
             //MessageBox.Show("" + M + " " + N);
         }
@@ -257,7 +263,6 @@ namespace N_Puzzle
             game();
             Invalidate();
             //MessageBox.Show("" + M + " " + N);
-             
         }
 
         private void излезToolStripMenuItem_Click(object sender, EventArgs e)
