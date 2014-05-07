@@ -12,19 +12,18 @@ namespace N_Puzzle
 {
     public partial class Form1 : Form
     {
-        List<Pole> pole = new List<Pole>();
+        List<Pole> pole = new List<Pole>(); // Листа во која се чуваат полињата
         Random r = new Random();
-
         Form2 f2 = new Form2();
 
-        int[,] mat;
-        int count = 0;
-        int potezi = 0;
+        int[,] mat; // Матрица која го содржи распоредот на полињата
+        int count = 0; // Бројач за време
+        int potezi = 0; // Бројач за потези
 
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int N { get; set; }
-        public int M { get; set; }
+        public int X { get; set; } // Координата X
+        public int Y { get; set; } // Координата Y
+        public int N { get; set; } // Број на полиња
+        public int M { get; set; } // Број на полиња во еден ред
 
         Timer t = new Timer();
         public Form1()
@@ -36,7 +35,6 @@ namespace N_Puzzle
             label1.Visible = false;
             label1.Text = "Изминато времe: 00:00:00";
             label2.Visible = false;
-            паузаToolStripMenuItem.Checked = false;
         }
 
         // Креирање на објекти(полиња)
@@ -96,7 +94,6 @@ namespace N_Puzzle
                 }
                 StringBuilder s = new StringBuilder(@f2.str1);
                 StringBuilder s1 = new StringBuilder(@f2.str2);
-                //MessageBox.Show(f.str1 + "  " + f.str2);
                 int n = r.Next(list.Count);
                 int m = list[n];
                 mat[j, k] = m;
@@ -139,13 +136,13 @@ namespace N_Puzzle
         // Наоѓаме кое поле е кликнато и правиме замена ако има валиден потег
         private void MouseKlik(object sender, MouseEventArgs e)
         {
-            int x = e.X, y = e.Y, n = 0, i = 0, j = 0, a = 0, b = 0;
+            // x,y координати на кликот, a,b помошни индекси, n вредноста на кликнатото поле
+            int x = e.X, y = e.Y, n = 0, a = 0, b = 0;
             X = 83;
             Y = 100;
-            //MessageBox.Show("" + x +" "+ y);
-            for (i = 0; i < M; i++)
+            for (int i = 0; i < M; i++)
             {
-                for (j = 0; j < M; j++)
+                for (int j = 0; j < M; j++)
                 {
                     if (X - x <= 83 && X - x >= 0 && Y - y <= 76 && Y - Y >= 0)
                     {
@@ -160,9 +157,9 @@ namespace N_Puzzle
             }
             if (sosedi(a, b) == 1)
             {
-                for (i = 0; i < M; i++)
+                for (int i = 0; i < M; i++)
                 {
-                    for (j = 0; j < M; j++)
+                    for (int j = 0; j < M; j++)
                     {
                         if (mat[i, j] == 0)
                         {
@@ -182,7 +179,8 @@ namespace N_Puzzle
             if (proveri())
             {
                 t.Stop();
-                MessageBox.Show("Честитки освоивте: " + (100000 / count) * (100 / potezi) + " поени");
+                MessageBox.Show("Честитки освоивте: " + (10000 / count) * (1000 / potezi) + " поени");
+                this.MouseDown -= MouseKlik;
             }
         }
 
@@ -270,7 +268,6 @@ namespace N_Puzzle
             M = 3;
             game();
             Invalidate();
-            //MessageBox.Show("" + M + " " + N);
         }
 
         private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,7 +290,6 @@ namespace N_Puzzle
             M = 4;
             game();
             Invalidate();
-            //MessageBox.Show("" + M + " " + N);
         }
 
         private void излезToolStripMenuItem_Click(object sender, EventArgs e)
@@ -309,9 +305,5 @@ namespace N_Puzzle
             label1.Text = "Изминато времe: "+TimeSpan.FromSeconds(count).ToString();
         }
 
-        private void паузаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
