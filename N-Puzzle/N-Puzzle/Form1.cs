@@ -305,5 +305,10 @@ namespace N_Puzzle
             label1.Text = "Изминато времe: "+TimeSpan.FromSeconds(count).ToString();
         }
 
+        private void паузаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
