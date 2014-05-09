@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,7 @@ namespace N_Puzzle
         // Креирање на објекти(полиња)
         private void game()
         {
+            this.MouseDown += MouseKlik;
             X = 0;
             Y = 24;
             List<int> list = new List<int>();
@@ -178,9 +180,9 @@ namespace N_Puzzle
             label2.Text = "Потези: " + potezi;
             if (proveri())
             {
+                this.MouseDown -= MouseKlik;
                 t.Stop();
                 MessageBox.Show("Честитки освоивте: " + (10000 / count) * (1000 / potezi) + " поени");
-                this.MouseDown -= MouseKlik;
             }
         }
 
@@ -250,7 +252,7 @@ namespace N_Puzzle
 
         private void x3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.MouseDown += MouseKlik;
+            this.MouseDown -= MouseKlik;
             f2.tri = true;
             f2.ShowDialog();
             count = 0;
@@ -272,7 +274,7 @@ namespace N_Puzzle
 
         private void x4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.MouseDown += MouseKlik;
+            this.MouseDown -= MouseKlik;
             f2.tri = false;
             f2.ShowDialog();
             count = 0;
