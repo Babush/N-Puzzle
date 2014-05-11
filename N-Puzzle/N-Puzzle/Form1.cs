@@ -186,8 +186,8 @@ namespace N_Puzzle
                 t.Stop();
                 Form4 f4 = new Form4();
                 f4.ShowDialog();
-                MessageBox.Show("Честитки освоивте: " + (10000 / count) * (1000 / potezi) + " поени");
-                score.Add(new Score(f4.s, (10000 / count) * (1000 / potezi), TimeSpan.FromSeconds(count).ToString(), potezi, M));
+                MessageBox.Show("Честитки освоивте: " + (100000 / count) * (1000 / potezi) + " поени");
+                score.Add(new Score(f4.s, (100000 / count) * (1000 / potezi), TimeSpan.FromSeconds(count).ToString(), potezi, M));
                 score = score.OrderByDescending(z => z.Poeni).ToList();
             }
         }
