@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace N_Puzzle
 {
-    class Score
+    public class Score
     {
         public string Ime { get; set; }
         public int Poeni { get; set; }
@@ -23,7 +23,9 @@ namespace N_Puzzle
         }
         public override string ToString()
         {
-            return Ime+"\t"+Vreme+"\t"+Potezi+"\t"+Poeni;
+            if(Tip == 3)
+                return "\t"+Ime+"\t\t"+Vreme+"\t\t"+Potezi+"\t\t"+Poeni+"\t\t3x3";
+            return "\t" + Ime + "\t\t" + Vreme + "\t\t" + Potezi + "\t\t" + Poeni + "\t\t4x4";
         }
     }
 }

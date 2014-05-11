@@ -33,10 +33,11 @@
             this.новаИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.паузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highScoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.излезToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.паузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.играToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.новаИграToolStripMenuItem,
             this.паузаToolStripMenuItem,
+            this.highScoresToolStripMenuItem,
             this.излезToolStripMenuItem});
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             this.играToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
@@ -66,27 +68,41 @@
             this.x3ToolStripMenuItem,
             this.x4ToolStripMenuItem});
             this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
-            this.новаИграToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.новаИграToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.новаИграToolStripMenuItem.Text = "Нова игра";
             // 
             // x3ToolStripMenuItem
             // 
             this.x3ToolStripMenuItem.Name = "x3ToolStripMenuItem";
-            this.x3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.x3ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.x3ToolStripMenuItem.Text = "3 x 3";
             this.x3ToolStripMenuItem.Click += new System.EventHandler(this.x3ToolStripMenuItem_Click);
             // 
             // x4ToolStripMenuItem
             // 
             this.x4ToolStripMenuItem.Name = "x4ToolStripMenuItem";
-            this.x4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.x4ToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.x4ToolStripMenuItem.Text = "4 x 4";
             this.x4ToolStripMenuItem.Click += new System.EventHandler(this.x4ToolStripMenuItem_Click);
+            // 
+            // паузаToolStripMenuItem
+            // 
+            this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
+            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.паузаToolStripMenuItem.Text = "Пауза";
+            this.паузаToolStripMenuItem.Click += new System.EventHandler(this.паузаToolStripMenuItem_Click);
+            // 
+            // highScoresToolStripMenuItem
+            // 
+            this.highScoresToolStripMenuItem.Name = "highScoresToolStripMenuItem";
+            this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.highScoresToolStripMenuItem.Text = "High Scores";
+            this.highScoresToolStripMenuItem.Click += new System.EventHandler(this.highScoresToolStripMenuItem_Click);
             // 
             // излезToolStripMenuItem
             // 
             this.излезToolStripMenuItem.Name = "излезToolStripMenuItem";
-            this.излезToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.излезToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.излезToolStripMenuItem.Text = "Излез";
             this.излезToolStripMenuItem.Click += new System.EventHandler(this.излезToolStripMenuItem_Click);
             // 
@@ -109,13 +125,6 @@
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
-            // 
-            // паузаToolStripMenuItem
-            // 
-            this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
-            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.паузаToolStripMenuItem.Text = "Пауза";
-            this.паузаToolStripMenuItem.Click += new System.EventHandler(this.паузаToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -147,6 +156,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem паузаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem highScoresToolStripMenuItem;
     }
 }
 

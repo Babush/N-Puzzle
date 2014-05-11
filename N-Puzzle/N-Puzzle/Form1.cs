@@ -14,7 +14,8 @@ namespace N_Puzzle
     public partial class Form1 : Form
     {
         List<Pole> pole = new List<Pole>(); // Листа во која се чуваат полињата
-        List<Score> score = new List<Score>();
+        public List<Score> score = new List<Score>();
+
         Random r = new Random();
         Form2 f2 = new Form2();
 
@@ -183,8 +184,15 @@ namespace N_Puzzle
             {
                 this.MouseDown -= MouseKlik;
                 t.Stop();
+                Form4 f4 = new Form4();
+                f4.ShowDialog();
                 MessageBox.Show("Честитки освоивте: " + (10000 / count) * (1000 / potezi) + " поени");
-
+                score.Add(new Score(f4.s, (10000 / count) * (1000 / potezi),count, potezi, M));
+                score = score.OrderByDescending(z => z.Poeni).ToList();
+                foreach (Score s in score)
+                {
+                    MessageBox.Show(s+"");
+                }
             }
         }
 
@@ -307,8 +315,27 @@ namespace N_Puzzle
 
         private void паузаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (паузаToolStripMenuItem.Checked == true)
+            {
+                t.Start();
+                this.MouseDown += MouseKlik;
+                паузаToolStripMenuItem.Checked = false;
+                return;
+            }
+            if (паузаToolStripMenuItem.Checked == false)
+            {
+                t.Stop();
+                this.MouseDown -= MouseKlik;
+                паузаToolStripMenuItem.Checked = true;
+                return;
+            }
+            
         }
 
+        private void highScoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3(score);
+            f3.ShowDialog();
+        }
     }
 }
