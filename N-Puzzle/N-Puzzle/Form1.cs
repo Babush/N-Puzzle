@@ -14,6 +14,7 @@ namespace N_Puzzle
     public partial class Form1 : Form
     {
         List<Pole> pole = new List<Pole>(); // Листа во која се чуваат полињата
+        List<Score> score = new List<Score>();
         Random r = new Random();
         Form2 f2 = new Form2();
 
@@ -183,6 +184,7 @@ namespace N_Puzzle
                 this.MouseDown -= MouseKlik;
                 t.Stop();
                 MessageBox.Show("Честитки освоивте: " + (10000 / count) * (1000 / potezi) + " поени");
+
             }
         }
 
@@ -264,8 +266,6 @@ namespace N_Puzzle
             label1.Visible = true;
             label2.Location = new Point(166,252);
             label2.Visible = true;
-            x3ToolStripMenuItem.Checked = true;
-            x4ToolStripMenuItem.Checked = false;
             N = 9;
             M = 3;
             game();
@@ -286,8 +286,6 @@ namespace N_Puzzle
             label1.Visible = true;
             label2.Location = new Point(166, 328);
             label2.Visible = true;
-            x4ToolStripMenuItem.Checked = true;
-            x3ToolStripMenuItem.Checked = false;
             N = 16;
             M = 4;
             game();

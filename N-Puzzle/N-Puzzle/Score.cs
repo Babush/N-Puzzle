@@ -12,12 +12,14 @@ namespace N_Puzzle
         public int Poeni { get; set; }
         public int Vreme { get; set; }
         public int Potezi { get; set; }
-        public Score(string ime,int poeni,int vreme,int potezi)
+        public int Tip { get; set; }
+        public Score(string ime,int poeni,int vreme,int potezi,int tip)
         {
             Ime = ime;
             Poeni = poeni;
             Vreme = vreme;
             Potezi = potezi;
+            Tip = tip;
         }
         public override string ToString()
         {
