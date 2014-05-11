@@ -14,7 +14,7 @@ namespace N_Puzzle
     public partial class Form1 : Form
     {
         List<Pole> pole = new List<Pole>(); // Листа во која се чуваат полињата
-        public List<Score> score = new List<Score>();
+        List<Score> score = new List<Score>();
 
         Random r = new Random();
         Form2 f2 = new Form2();
@@ -187,12 +187,8 @@ namespace N_Puzzle
                 Form4 f4 = new Form4();
                 f4.ShowDialog();
                 MessageBox.Show("Честитки освоивте: " + (10000 / count) * (1000 / potezi) + " поени");
-                score.Add(new Score(f4.s, (10000 / count) * (1000 / potezi),count, potezi, M));
+                score.Add(new Score(f4.s, (10000 / count) * (1000 / potezi), TimeSpan.FromSeconds(count).ToString(), potezi, M));
                 score = score.OrderByDescending(z => z.Poeni).ToList();
-                foreach (Score s in score)
-                {
-                    MessageBox.Show(s+"");
-                }
             }
         }
 
